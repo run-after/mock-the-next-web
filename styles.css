@@ -51,6 +51,14 @@ table {
 
 /********************* STYLESHEET *******************************/
 
+body {
+  background: #f1f1f1;
+}
+h1 {
+  font-weight: bold;
+  width: 90%;
+}
+
 /* HEADER */
 
 nav {
@@ -129,23 +137,31 @@ nav {
   letter-spacing: .5px;
 }
 
-.main-article {
-  grid-row: 1 / -1;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.5), rgba(0, 0 , 0, 0.5)), 
-              url(media/astro.jpeg);
-  background-size: cover;
-  display: grid;
-  margin-left: 10px;
+.feat-art {
+  overflow: hidden;
 }
 
-.main-article > * {
+.feat-art > * {
   margin-left: 15px;
 }
 
-.main-article p {
+.feat-art .author {
+  align-self: end;
+  margin-bottom: 2%;
+  opacity: 0.7;
   font-size: .75em;
+}
+/* MAIN ARTICLE */
+
+.main-article {
+  grid-row: 1 / -1;
+  height: 100%;
+  width: 99%;
+  background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 0 , 0, 0.5)), 
+              url(media/astro.jpeg);
+  background-size: cover;
+  display: grid;
+  margin: 10px 0 0 10px;
 }
 
 .main-article img {
@@ -162,24 +178,46 @@ nav {
 
 .main-article h1 {
   font-size: 3em;
-  font-weight: bold;
-  width: 90%;
 }
-
-.main-article .author {
-  align-self: end;
-  margin-bottom: 20px;
-  opacity: 0.6;
-}
+/* TOP ARTICLE */
 
 .top-article {
   height: 100%;
-  width: 100%;
-  background: yellow;
+  width: 99%;
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0 , 0, 0.8)), 
+              url(media/phone.jpeg);
+  background-size: cover;
+  display: grid;
+  margin-top: 10px;
+  align-content: end;
 }
+
+.top-article h5 {
+  margin-bottom: 10px;
+}
+
+.top-article h1 {
+  font-size: 1.75em;
+  margin-bottom: 10px;
+}
+/* LOWER ARTICLE */
 
 .lower-article {
   height: 100%;
-  width: 100%;
-  background: blue;
+  width: 99%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0 , 0, 0.8)), 
+              url(media/kid-comp.jpeg);
+  background-size: cover;
+  display: grid;
+  margin-top: 10px;
+  align-content: end;
+}
+
+.lower-article h5 {
+  margin-bottom: 10px;
+}
+
+.lower-article h1 {
+  font-size: 1.75em;
+  margin-bottom: 10px;
 }
