@@ -49,7 +49,7 @@ table {
 	border-spacing: 0;
 }
 
-/* STYLESHEET */
+/********************* STYLESHEET *******************************/
 
 /* HEADER */
 
@@ -57,9 +57,10 @@ nav {
   display: grid;
   grid-template-columns: 105px 1fr 45px;
   height: 50px;
-  width: 99%;
+  width: 100%;
   align-items: center;
   position: fixed;
+  top: 0;
   background: white;
 }
 
@@ -67,7 +68,6 @@ nav {
   display: grid;
   justify-items: center;
   align-items: center;
-  width: 100%;
   height: 100%;
   background-image: linear-gradient(to bottom right, #db1475, #ff4422);
 }
@@ -113,4 +113,73 @@ nav {
   align-self: center;
   width: 35%;
   transform: scaleX(-1);
+}
+
+/* MAIN CONTENT */
+
+.featured-articles {
+  margin-top: 50px;
+  width: 100%;
+  height: 65vh;/* full screen it gets smaller */
+  display: grid;
+  grid-template: 50% 50% / 66% 1fr;
+  grid-gap: 10px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: .5px;
+}
+
+.main-article {
+  grid-row: 1 / -1;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.5), rgba(0, 0 , 0, 0.5)), 
+              url(media/astro.jpeg);
+  background-size: cover;
+  display: grid;
+  margin-left: 10px;
+}
+
+.main-article > * {
+  margin-left: 15px;
+}
+
+.main-article p {
+  font-size: .75em;
+}
+
+.main-article img {
+  width: 40%;
+  margin-top: -50px;
+}
+
+.main-article .date {
+  grid-row: 1 / 2;
+  justify-self: end;
+  align-self: start;
+  margin-right: 25px;
+}
+
+.main-article h1 {
+  font-size: 3em;
+  font-weight: bold;
+  width: 90%;
+}
+
+.main-article .author {
+  align-self: end;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.top-article {
+  height: 100%;
+  width: 100%;
+  background: yellow;
+}
+
+.lower-article {
+  height: 100%;
+  width: 100%;
+  background: blue;
 }
