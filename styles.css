@@ -125,15 +125,20 @@ nav {
 
 /* MAIN CONTENT */
 
+main {
+  margin-top: 60px;
+  display: grid;
+  justify-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .featured-articles {
-  margin-top: 50px;
   width: 100%;
   height: 65vh;/* full screen it gets smaller */
   display: grid;
   grid-template: 50% 50% / 66% 1fr;
   grid-gap: 10px;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
   letter-spacing: .5px;
 }
 
@@ -161,7 +166,7 @@ nav {
               url(media/astro.jpeg);
   background-size: cover;
   display: grid;
-  margin: 10px 0 0 10px;
+  margin-left: 10px;
 }
 
 .main-article img {
@@ -188,7 +193,6 @@ nav {
               url(media/phone.jpeg);
   background-size: cover;
   display: grid;
-  margin-top: 10px;
   align-content: end;
 }
 
@@ -209,7 +213,6 @@ nav {
               url(media/kid-comp.jpeg);
   background-size: cover;
   display: grid;
-  margin-top: 10px;
   align-content: end;
 }
 
@@ -220,4 +223,36 @@ nav {
 .lower-article h1 {
   font-size: 1.75em;
   margin-bottom: 10px;
+}
+/* LATEST NEWS */
+
+.latest-news {
+  width: 1150px;/* Maybe measure in px until first breakpoint, then % ....73% fullscreen*/
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 140px repeat(2, 1fr);
+}
+
+.latest-news h2 {
+  grid-column: 1 / -1;
+  align-self: end;
+  color: #ff4422;
+  font-weight: bold;
+  font-size: 1.75em;
+}
+
+.latest-article img {
+  width: 100%;
+  height: 145px;
+}
+
+.latest-article h4 {
+  font-weight: bold;
+}
+
+.latest-article p {
+  font-size: .75em;
+  opacity: 0.5;
+  margin-top: 10px;
 }
