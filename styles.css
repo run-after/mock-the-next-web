@@ -51,9 +51,6 @@ table {
 
 /********************* STYLESHEET *******************************/
 
-body {
-  background: #f1f1f1;
-}
 h1 {
   font-weight: bold;
   width: 90%;
@@ -70,6 +67,8 @@ nav {
   position: fixed;
   top: 0;
   background: white;
+  box-shadow: 0 10px 25px #eeeeee;
+  z-index: 100;
 }
 
 .logo {
@@ -224,22 +223,26 @@ main {
   font-size: 1.75em;
   margin-bottom: 10px;
 }
-/* LATEST NEWS */
+/* HERO SECTION */
 
-.latest-news {
+.container {
   width: 1150px;/* Maybe measure in px until first breakpoint, then % ....73% fullscreen*/
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 140px repeat(2, 1fr);
 }
 
-.latest-news h2 {
+.container h2 {
   grid-column: 1 / -1;
   align-self: end;
   color: #ff4422;
   font-weight: bold;
   font-size: 1.75em;
+}
+/* LATEST NEWS */
+
+.latest-news {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 140px repeat(2, 1fr);
 }
 
 .latest-article img {
@@ -256,3 +259,105 @@ main {
   opacity: 0.5;
   margin-top: 10px;
 }
+/* FUNDING */
+
+.funding {
+  display: grid;
+  position: relative;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 140px 1fr;
+}
+
+.funding h2 {
+  grid-column: 1 / 3;
+}
+
+.funding .links {
+  grid-column: 3 / -1;
+  align-self: end;
+  justify-self: end;
+}
+
+.fund-link {
+  color: #ff4422;
+  text-decoration: none;
+}
+
+.funding .company {
+  width: 100%;
+  height: 275px;
+  background: linear-gradient(
+    #ff4422, 
+    #ff4422 15%,
+    #ffebe7 15%,
+    #ffebe7 35%,
+    #fffaf8 35%,
+    #fffaf8 100%);
+    display: grid;
+    grid-template-rows: 15% 20% 1fr 1fr;
+    grid-template-columns: 80px 1fr;
+}
+
+.company-image {
+  width: 60px;
+  margin: 10px 0 0 10px;
+  grid-row: 1 / 2;
+}
+
+.funding .company-name {
+  color: white;
+  font-weight: bold;
+  grid-row: 1 / 2;
+  align-self: center;
+}
+
+.funding .amount {
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
+  align-self: center;
+}
+
+.funding .amount-given {
+  color: black;
+  font-weight: bold;  
+}
+
+.funding .amount-type {
+  font-size: .75em;
+  opacity: 0.5;
+}
+
+.funding .details {
+  grid-column: 1 / -1;
+  font-size: .8em;
+}
+
+.funding .details1 {
+  align-self: start;
+  width: 100%;
+  border-bottom: 1px solid #ff4422;
+  line-height: 1.5em;
+  margin: 15px 0 15px 0;
+  padding-bottom: 10px;
+}
+
+.details1 p {
+  width: 80%;
+  margin-left: 30px;
+}
+
+.funding .details2 {
+  width: 80%;
+  margin: 10px 0 0 10px;
+}
+
+.details2 span {
+  line-height: 1.25em;
+}
+
+.details2 .fade {
+  opacity: 0.6;
+}
+/* funding boxes are inflexable because the container's size is fixed */
+
