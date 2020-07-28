@@ -157,7 +157,7 @@ main {
 }
 /* MAIN ARTICLE */
 
-.main-article {
+.featured-articles .main-article {
   grid-row: 1 / -1;
   height: 100%;
   width: 99%;
@@ -168,19 +168,19 @@ main {
   margin-left: 10px;
 }
 
-.main-article img {
+.featured-articles .main-article img {
   width: 40%;
   margin-top: -50px;
 }
 
-.main-article .date {
+.featured-articles .main-article .date {
   grid-row: 1 / 2;
   justify-self: end;
   align-self: start;
   margin-right: 25px;
 }
 
-.main-article h1 {
+.featured-articles .main-article h1 {
   font-size: 3em;
 }
 /* TOP ARTICLE */
@@ -360,4 +360,95 @@ main {
   opacity: 0.6;
 }
 /* funding boxes are inflexable because the container's size is fixed */
+
+/* ARTICLE SECTIONS */
+
+.article-sections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.section {
+  width: 100%;
+}
+
+.section h2 {
+  margin-top: 40px;
+}
+
+.section .main-article {
+  width: 100%;
+  height: 200px;
+  background: center url(media/placeholder.png);
+  display: grid;
+  align-content: end;
+  color: white;
+}
+
+.section .main-article > * {
+  margin: 0 0 5px 10px;
+}
+
+.section .main-article h5 {
+  font-size: 0.75em;
+  letter-spacing: 1px;
+}
+
+.section .main-article h1 {
+  font-size: 1.25em;
+}
+
+.section .main-article p {
+  font-size: 0.75em;
+  opacity: 0.8;
+}
+
+.section .latest {
+  background: #fff4f2;
+  width: 100%;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  grid-template-rows: 35px 1fr;
+  color: #ff4422;
+}
+
+.latest h5 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  margin-left: 10px;
+  align-self: end;
+  font-size: 0.9em;
+}
+
+.latest p {
+  grid-row: 2 / -1;
+  grid-column: 1 / 2;
+  margin-left: 10px;
+  align-self: center;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.latest img {
+  grid-row: 1 / -1;
+  height: 100px;
+  width: 100px;
+}
+
+li {
+  margin: 10px 0 10px 15px;
+  border-bottom: 1px solid rgba(0, 0 , 0, 0.2);
+  font-size: 0.9em;
+}
+
+li::before {
+  content: "\2022";
+  color: red;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
 
