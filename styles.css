@@ -55,7 +55,6 @@ h1 {
   font-weight: bold;
   width: 90%;
 }
-
 /* HEADER */
 
 nav {
@@ -108,6 +107,8 @@ nav {
   width: 50px;
   height: 50px;
   border-left: 1px solid rgba(170, 170, 170, 0.2);
+  border-right: 1px solid rgba(170, 170, 170, 0.2);
+  justify-self: end;
 }
 
 .search a {
@@ -122,6 +123,21 @@ nav {
   transform: scaleX(-1);
 }
 
+.hamburger {
+  display: none;
+  justify-self: end;
+  height: 20px;
+  width: 45px;
+}
+
+.hamburger div {
+  height: 2.5px;
+  width: 40%;
+  background: orange;
+  justify-self: center;
+  align-self: center;
+}
+
 /* MAIN CONTENT */
 
 main {
@@ -133,12 +149,13 @@ main {
 
 .featured-articles {
   width: 100%;
-  height: 65vh;/* full screen it gets smaller */
+  height: 65vh;
   display: grid;
   grid-template: 50% 50% / 66% 1fr;
   grid-gap: 10px;
   color: white;
   letter-spacing: .5px;
+  margin-bottom: 100px;
 }
 
 .feat-art {
@@ -166,18 +183,20 @@ main {
   background-size: cover;
   display: grid;
   margin-left: 10px;
+  align-content: end;
+  position: relative;
 }
 
 .featured-articles .main-article img {
   width: 40%;
-  margin-top: -20px;
+  position: absolute;
+  top: 10px;
 }
 
 .featured-articles .main-article .date {
-  grid-row: 1 / 2;
-  justify-self: end;
-  align-self: start;
-  margin-right: 25px;
+  position: absolute;
+  top: 10px;
+  right: 25px;
 }
 
 .featured-articles .main-article h1 {
@@ -226,7 +245,7 @@ main {
 /* HERO SECTION */
 
 .container {
-  width: 1150px;/* Maybe measure in px until first breakpoint, then % ....73% fullscreen*/
+  width: 1150px;
 }
 
 .container h2 {
@@ -242,7 +261,6 @@ main {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 140px repeat(2, 1fr);
 }
 
 .latest-article img {
@@ -359,10 +377,7 @@ main {
 .details2 .fade {
   opacity: 0.6;
 }
-/* funding boxes are inflexable because the container's size is fixed */
-
 /* ARTICLE SECTIONS */
-
 .article-sections {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -547,6 +562,10 @@ footer .legal {
   .container {
     width: 95%;
   }  
+
+  #neural {
+    display: none;
+  }
 }
 /* 1023px */
 @media (max-width: 1023px) {
@@ -597,6 +616,10 @@ footer .legal {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .funding h2 {
+    grid-column: 1 / -1
+  }
+
   .funding .links {
     grid-column: 1 / -1;
     align-self: end;
@@ -619,5 +642,114 @@ footer .legal {
 
   .deal img {
     height: 70%;
+  }
+}
+/* 767px */
+@media (max-width: 767px) {
+  /* NAV BAR */
+  .header-list {
+    display: none;
+  }
+
+  .hamburger {
+    display: grid;
+  }
+  /* FEATURED ARTICLES */
+  .featured-articles {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 200px);
+    height: auto;
+  }
+
+  .feat-art {
+    justify-self: center;
+  }
+
+  .featured-articles .main-article {
+    grid-row: 1 / 2;
+    margin: 0;
+  }
+
+  .featured-articles .main-article h1 {
+    font-size: 1.5em;
+  }
+  /* LATEST NEWS */
+  .latest-news {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-article {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+  }
+
+  .latest-article img {
+    grid-row: 1 / 2;
+    width: 75px;
+    height: 75px;
+  }
+
+  .latest-article h4,
+  .latest-article p {
+    grid-row: 1 / 2;
+    grid-column: 2 / -1;
+    margin-left: 10px;
+  }
+
+  .latest-article p {
+    align-self: center;
+  }
+  /* FUNDING */
+  .funding {
+    grid-template-columns: 1fr;
+  }
+  /* ARTICLE SECTIONS */
+  .article-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .article-sections li {
+    display: block;
+  }
+  /* LATEST DEALS */
+  .latest-deals {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-deals a {
+    grid-column: 1 /2;
+  }
+
+  .latest-deals .deal {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+  }
+
+  .latest-deals img {
+    grid-row: 1 / 2;
+    height: 100%;
+    width: 100%;
+  }
+
+  .latest-deals h3,
+  .latest-deals .old-price,
+  .latest-deals .price {
+    grid-row: 1 / 2;
+    grid-column: 2 / -1;
+    margin-left: 10px;
+  }
+
+  .latest-deals .old-price,
+  .latest-deals .price {
+    align-self: center;
+  }
+
+  .latest-deals .price {
+    margin-left: 50px;
+  }
+  /* FOOTER */
+  .legal p {
+    width: 50%;
+    justify-self: center;
   }
 }
